@@ -1,0 +1,71 @@
+<!DOCTYPE composition>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html dir="ltr" lang="en-CA"><head><title>Internet Payment Gateway</title>
+&#9;&#9;&#9;<link href="/vt/css/newlogin.css?version=a460e85" type="text/css" rel="stylesheet">
+&#9;<style id="antiClickjack">body{display:none !important;}</style>
+&#9;<script type="text/javascript">
+		if (self === top) {
+			var antiClickjack = document.getElementById("antiClickjack");
+			antiClickjack.parentNode.removeChild(antiClickjack);
+		} else {
+			top.location = self.location;
+		}
+	</script>
+&#9;&#9;&#9;<meta name="viewport" content="width=device-width, initial-scale=1.0">
+&#9;&#9;&#9;<script type="text/javascript" src="/vt/script/jquery.min.js?version=a460e85"></script>
+&#9;&#9;&#9;<script type="text/javascript">
+				$(document).ready(function() {
+					checkMultipleSessions();
+					$("#loginForm\\:storeId").focus();
+					var d = new Date();
+					$("#captchaID").attr("src", "/vt/simpleImg?"+d.getTime());
+					var favIconName = "fiserv_login.png";
+					var contextPath="/vt";
+					var url = contextPath+"/images/favimg/"+ favIconName;
+					var link = top.document.createElement("link");
+					link.type = "image/x-icon";
+					link.rel = "shortcut icon";
+					link.href = url;
+					top.document.getElementsByTagName("head")[0].appendChild(link);
+				});
+				function checkMultipleSessions(){
+					var loginPageURL = window.location.search.substring(1);
+				if (loginPageURL.includes("multipleSessionsDetected")){
+					document.getElementById("multipleSessionsDetected").style.display = "block";
+					document.getElementById("multipleSessionsDetected").style.color = "red";
+					document.getElementById("multipleSessionsDetected").style.fontSize = "larger";
+					}
+				}
+			</script><meta name="generator" content="Apache MyFaces Trinidad"><link rel="stylesheet" charset="UTF-8" type="text/css" href="/vt/adf/styles/cache/unbranded-desktop-tzopy--d-gecko-d-d-ltr-d--s-s-c.css"><script type="text/javascript" src="/vt/javax.faces.resource/jsf.js.faces?ln=javax.faces"></script></head><body onload="_checkLoad()" onunload="_checkUnload(event)"><script type="text/javascript">var _AdfWindowOpenError='A popup window blocker has been detected in your browser. Popup blockers interfere with the operation of this application. Please disable your popup blocker or allow popups from this site.';</script><script type="text/javascript" src="/vt/adf/jsLibs/Locale2_1_3.js"></script><script type="text/javascript" src="/vt/adf/jsLibs/Common2_1_3.js"></script><div id="tr_pprBlockingDiv" onclick="return _pprConsumeClick(event);" style="position:absolute;left:0;top:0;width:0;height:0;cursor:wait;" onkeydown="return false;" onkeyup="return false;" onmousedown="return false;" onmouseup="return false;" onkeypress="return false;"></div><a name="top"></a><noscript>This page uses JavaScript and requires a JavaScript enabled browser.Your browser is not JavaScript enabled.</noscript>
+&#9;&#9;<div id="header" class="header">
+&#9;&#9;&#9;<div class="clear">
+&#9;&#9;&#9;&#9;<div id="loginLogo" class="logo"></div>
+&#9;&#9;&#9;</div>
+&#9;&#9;</div>
+&#9;&#9;<div id="content"><form id="loginForm" name="loginForm" method="POST" onkeypress="return _submitOnEnter(event,'loginForm','loginForm:login',1,false);" action="/vt/newlogin.faces">
+&#9;&#9;&#9;&#9;<input type="hidden" name="reseller">
+&#9;&#9;&#9;&#9;<input type="hidden" value="-9018622109103022500" name="CSRF_TOKEN">
+&#9;&#9;&#9;&#9;<h1>Login</h1>
+&#9;&#9;&#9;&#9;&#9;<p id="multipleSessionsDetected" style="display:none;">Session Invalidated: Multiple logins detected. Please identify your current session in a different browser window or close all browsers to clear cookies. Kindly login again</p>
+&#9;&#9;&#9;&#9;<h5>You may leave username empty if it is the same as storename.</h5>
+&#9;&#9;&#9;&#9;<p>
+&#9;&#9;&#9;&#9;&#9;<label for="loginForm:storeId">storename</label><input id="loginForm:storeId" type="text" name="loginForm:storeId" class="">
+&#9;&#9;&#9;&#9;</p>
+&#9;&#9;&#9;&#9;<p>
+&#9;&#9;&#9;&#9;&#9;<label for="loginForm:userId">username</label><input id="loginForm:userId" type="text" name="loginForm:userId">
+&#9;&#9;&#9;&#9;</p>
+&#9;&#9;&#9;&#9;<p>
+&#9;&#9;&#9;&#9;&#9;<label for="loginForm:password">Password</label><input id="loginForm:password" type="password" name="loginForm:password" autocomplete="off" value="">
+&#9;&#9;&#9;&#9;</p>
+&#9;&#9;&#9;&#9;<p><input id="loginForm:rememberMe" type="checkbox" name="loginForm:rememberMe"><span class="dark" style="margin-left:10px;">Remember me</span>
+&#9;&#9;&#9;&#9;</p>
+&#9;&#9;&#9;&#9;<span class="loginButton"><input id="loginForm:login" name="loginForm:login" type="submit" value="LOG IN" onclick="submitForm('loginForm',1,{source:'loginForm:login'});return false;"><div style="margin-top:15px"></div>
+&#9;&#9;&#9;&#9;</span>
+&#9;&#9;&#9;&#9;<p><a href="/vt/requestResetPassword.faces">Forgot your password?</a>
+&#9;&#9;&#9;&#9;</p>
+&#9;&#9;&#9;&#9;<br>
+&#9;&#9;&#9;&#9;<div class="errorBox">
+&#9;&#9;&#9;&#9;</div><input type="hidden" name="org.apache.myfaces.trinidad.faces.FORM" value="loginForm"><input type="hidden" name="_noJavaScript" value="false"><span id="tr_loginForm_Postscript"><script type="text/javascript">function _loginFormValidator(f,s){return _validateInline(f,s);}var loginForm_SF={};</script></span><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:1" value="!OvVwEJ2QrHe4UDSao7lM9EJzALoYNcb76fNsOjp+8Sh6z1R709OSATTj5WQ="><script type="text/javascript">_submitFormCheck();</script></form>
+&#9;&#9;</div>
+&#9;&#9;<div id="footer">
+&#9;&#9;&#9;
+&#9;&#9;</div></body></html>

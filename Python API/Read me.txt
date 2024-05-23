@@ -1,0 +1,11 @@
+First drag the "Python API" folder into the desired directory
+
+you will have to also run the following commands to get the program to work
+
+pip install selenium
+pip install webdriver-manager
+
+Then once that is done watch the video I made showing how it works.
+You still have to run the server before using and the server now has the 
+goverment invoice program and the cc generator program all in one so you dont
+need to run any extra files. 
